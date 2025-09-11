@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/splash/presentation/views/widgets/sliding_animated_text.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 
@@ -41,18 +42,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logo),
         const SizedBox(height: 5),
-        AnimatedBuilder(
-          animation: animationController,
-          builder: (BuildContext context, _) {
-            return SlideTransition(
-              position: slidingAnimation,
-              child: const Text(
-                'Read Free Books',
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
-            );
-          },
+        SlidingAnimatedText(
+          animationController: animationController,
+          slidingAnimation: slidingAnimation,
         ),
       ],
     );
